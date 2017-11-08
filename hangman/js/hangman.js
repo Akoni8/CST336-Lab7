@@ -1,7 +1,5 @@
 // Creating an array of available letters
-var alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 
-                'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 
-                'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+var alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 
 var selectedWord = "";
 var selectedHint = "";
@@ -10,7 +8,7 @@ var remainingGuesses = 6;
 var words = [{word: "snake", hint: "It's a reptile"},
              {word: "monkey", hint: "It's a mammal"},
              {word: "beetle", hint: "It's an insect"}];
-            
+var randomInt = Math.floor(Math.random() * words.length);
 //Begin game when page is fully loaded
 window.onload = startGame();
 
@@ -27,9 +25,10 @@ function initBoard() {
     }
 }
 function pickWord(){
-    var randomInt = Math.floor(Math.random() * words.length);
+    //var randomInt = Math.floor(Math.random() * words.length);
     selectedWord = words[randomInt].word.toUpperCase();
-    selectedHint = words[randomInt].hint;
+    //selectedHint = words[randomInt].hint;
+    return randomInt;
 }
             
 function updateBoard() {
@@ -40,7 +39,7 @@ function updateBoard() {
     }
     
     $("#word").append("<br />");
-    $("#word").append("<span class='hint'>Hint: " + selectedHint + "</span>");
+    //$("#word").append("<span class='hint'>Hint: " + selectedHint + "</span>");
 }
 
 function createLetters() {
@@ -63,7 +62,6 @@ function checkLetter(letter){
             positions.push(i);
         }
     }
-    
     if(positions.length > 0){
         updateWord(positions,letter);
         
@@ -113,3 +111,9 @@ function disableButton(btn) {
     btn.prop("disabled", true);
     btn.attr("class", "btn btn-danger");
 }
+
+$("#hint").click(function(){
+    selectedHint = words[randomInt].hint;
+    $("#word").append("<span class='hint'>Hint: " + selectedHint + "</span>");
+    console.log(selectedHint);
+});
