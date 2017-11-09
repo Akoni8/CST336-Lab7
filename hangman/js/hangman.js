@@ -44,7 +44,7 @@ function updateBoard() {
 
 function createLetters() {
     for(var letter of alphabet){
-        $("#letters").append("<button class='letter btn btn-success' id='" + letter + "'>" + letter + "</button>");
+        $("#letters").append("<button class='letter btn btn-primary' id='" + letter + "'>" + letter + "</button>");
     }
 }
 
