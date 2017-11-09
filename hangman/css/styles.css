@@ -1,11 +1,8 @@
 body {
-    background-color: gray;
+    background-color: #f9f9f9 !important;
     font-family: futura !important; 
 }
 
-#container{
-    font-family: futura !important;
-}
 #won, #lost {
     display: none;
 }
