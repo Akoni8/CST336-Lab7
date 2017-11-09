@@ -39,9 +39,7 @@ function initBoard() {
     }
 }
 function pickWord(){
-    //var randomInt = Math.floor(Math.random() * words.length);
     selectedWord = words[randomInt].word.toUpperCase();
-    //selectedHint = words[randomInt].hint;
     return randomInt;
 }
             
@@ -51,9 +49,7 @@ function updateBoard() {
     for(var letter of board) {
     document.getElementById("word").innerHTML += letter + " ";
     }
-    
     $("#word").append("<br />");
-    //$("#word").append("<span class='hint'>Hint: " + selectedHint + "</span>");
 }
 
 function createLetters() {
