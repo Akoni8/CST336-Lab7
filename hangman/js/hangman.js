@@ -12,18 +12,20 @@ var randomInt = Math.floor(Math.random() * words.length);
 //Begin game when page is fully loaded
 window.onload = startGame();
 
-
 $(".letter").click(function(){
     console.log($(this).attr("id"));
     checkLetter($(this).attr("id"));
     disableButton($(this));
 });
 
-
 $("#hint").click(function(){
     selectedHint = words[randomInt].hint;
     $("#word").append("<span class='hint'>Hint: " + selectedHint + "</span>");
     console.log(selectedHint);
+});
+
+$(".replayBtn").on("click", function(){
+    location.reload();
 });
 
 function startGame(){
@@ -71,7 +73,6 @@ function checkLetter(letter){
         
         if(!board.includes('_')){
             endGame(true);
-            $("#hint").css("display","none");
         }
     }
     else {
@@ -100,6 +101,7 @@ function updateMan() {
 
 function endGame(win){
     $("#letters").hide();
+    $("#hint").css("display","none");
     
     if(win){
         $('#won').show();
@@ -107,10 +109,6 @@ function endGame(win){
         $('#lost').show();
     }
 }
-
-$(".replayBtn").on("click", function(){
-    location.reload();
-});
 
 function disableButton(btn) {
     btn.prop("disabled", true);
