@@ -1,5 +1,6 @@
 body {
     background-color: gray;
+    font-family: futura;
 }
 
 #won, #lost {
@@ -13,10 +14,10 @@ body {
 #man {
     margin: 20px auto;
     width: 600px;
-    height: 600px;
+    height: 500px;
     border: solid;
     border-radius: 5px;
-    border-width: 1px;
+    border-width: 2px;
 }
 
 #word {
@@ -30,4 +31,12 @@ body {
 .btn {
     padding: 7px 7px !important;
     margin: 0px 2px;
+}
+
+h1 {
+    font-size: 1.2em;
+}
+
+h4 {
+    font-style: italic;
 }
