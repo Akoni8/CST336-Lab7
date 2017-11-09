@@ -5,7 +5,7 @@
         <link  href="css/styles.css" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         
@@ -15,8 +15,9 @@
     <body>
         <div class='container text-center'>
             <header>
-                <h1>Hangman<i class="fa fa-male" aria-hidden="true"></i></h1>
+                <h1>Hangman  <i class="fa fa-male" aria-hidden="true"></i></h1>
                 <h4>Javascript Edition</h4>
+                <hr id="line">
             </header>
             
             <div><button class="btn btn-info" id="hint">Hint</button></div>
@@ -24,13 +25,13 @@
             <div id="letters"></div>
             
             <div id="won">
-                <h2>You Won!<i class="fa fa-trophy" aria-hidden="true"></i></h2>
-                <button class="replayBtn btn btn-success">Play Again.<i class="fa fa-repeat" aria-hidden="true"></i></button>
+                <h2>You Won! <i class="fa fa-trophy" aria-hidden="true"></i></h2>
+                <button class="replayBtn btn btn-success"><i class="fa fa-repeat" aria-hidden="true">  Play Again.</i></button>
             </div>
             
             <div id="lost">
                 <h2>You Lost!<i class="fa fa-frown-o" aria-hidden="true"></i></h2>
-                <button class="replayBtn btn btn-warning">Play Again.<i class="fa fa-repeat" aria-hidden="true"></i></button>
+                <button class="replayBtn btn btn-warning"><i class="fa fa-repeat" aria-hidden="true">  Play Again.</i></button>
             </div>
             
             <div id="man">

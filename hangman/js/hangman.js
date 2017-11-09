@@ -12,6 +12,20 @@ var randomInt = Math.floor(Math.random() * words.length);
 //Begin game when page is fully loaded
 window.onload = startGame();
 
+
+$(".letter").click(function(){
+    console.log($(this).attr("id"));
+    checkLetter($(this).attr("id"));
+    disableButton($(this));
+});
+
+
+$("#hint").click(function(){
+    selectedHint = words[randomInt].hint;
+    $("#word").append("<span class='hint'>Hint: " + selectedHint + "</span>");
+    console.log(selectedHint);
+});
+
 function startGame(){
     pickWord();
     initBoard();
@@ -47,12 +61,6 @@ function createLetters() {
         $("#letters").append("<button class='letter btn btn-primary' id='" + letter + "'>" + letter + "</button>");
     }
 }
-
-$(".letter").click(function(){
-    console.log($(this).attr("id"));
-    checkLetter($(this).attr("id"));
-    disableButton($(this));
-})
 
 function checkLetter(letter){
     var positions = new Array();
@@ -111,9 +119,3 @@ function disableButton(btn) {
     btn.prop("disabled", true);
     btn.attr("class", "btn btn-danger");
 }
-
-$("#hint").click(function(){
-    selectedHint = words[randomInt].hint;
-    $("#word").append("<span class='hint'>Hint: " + selectedHint + "</span>");
-    console.log(selectedHint);
-});
