@@ -14,7 +14,7 @@ body {
 }
 
 #word, #letters {
-    padding: 20px 0px;
+    padding: 10px 0px;
 }
 
 #man {
@@ -33,6 +33,7 @@ body {
 .hint {
     font-size: 0.6em !important;
     color: green;
+    padding:0px;
 }
 
 .btn {

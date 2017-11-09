@@ -75,6 +75,7 @@ function checkLetter(letter){
         
         if(!board.includes('_')){
             endGame(true);
+            $("#hint").css("display","none");
         }
     }
     else {
